@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+:root {
+    color-scheme: light;
+    --cream: #f7f0e5;
+    --paper: #fffaf1;
+    --maroon: #641d2c;
+    --maroon-deep: #481522;
+    --gold: #b58a43;
+    --gold-light: #dfc68d;
+    --ink: #4b3c35;
+}
+
+* { box-sizing: border-box; }
+
+html { min-height: 100%; }
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    color: var(--ink);
+    background:
+        radial-gradient(ellipse at 50% 0%, rgba(255,255,255,.8), transparent 62%),
+        linear-gradient(135deg, #f4ead9, var(--cream) 52%, #efe2ce);
+    font-family: 'Poppins', sans-serif;
+}
+
+#fireworks {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.page {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: clamp(18px, 5vw, 56px) 16px;
+}
+
+.greeting-card {
+    position: relative;
+    width: min(100%, 720px);
+    overflow: hidden;
+    padding: clamp(30px, 6vw, 62px) clamp(22px, 7vw, 76px) 34px;
+    text-align: center;
+    background: rgba(255, 250, 241, .92);
+    border: 1px solid rgba(181, 138, 67, .58);
+    border-radius: 3px;
+    box-shadow: 0 24px 70px rgba(72, 21, 34, .12), inset 0 0 0 7px rgba(181, 138, 67, .07), inset 0 0 0 8px rgba(181, 138, 67, .18);
+}
+
+.greeting-card::before, .greeting-card::after {
+    content: '✧';
+    position: absolute;
+    top: 13px;
+    color: var(--gold);
+    font-size: 19px;
+}
+.greeting-card::before { left: 17px; }
+.greeting-card::after { right: 17px; }
+
+.top-label, .credit-title, .footer {
+    color: var(--gold);
+    font-size: .67rem;
+    font-weight: 500;
+    letter-spacing: .22em;
+}
+
+.rangoli {
+    margin: 16px auto 1px;
+    color: var(--gold);
+    font-size: 31px;
+    line-height: 1;
+    animation: slow-turn 28s linear infinite;
+}
+
+.diyas { display: flex; justify-content: center; gap: clamp(12px, 4vw, 30px); margin-top: 9px; }
+.diyas span { display: inline-block; font-size: clamp(25px, 5vw, 34px); filter: drop-shadow(0 4px 8px rgba(181, 138, 67, .24)); animation: glow 2.5s ease-in-out infinite alternate; }
+.diyas span:nth-child(2) { animation-delay: .6s; }
+.diyas span:nth-child(3) { animation-delay: 1.2s; }
+
+.hindi-top { margin: 18px 0 4px; color: #846846; font-size: .92rem; }
+h1, h2, h3, h4 { font-family: 'Cormorant Garamond', Georgia, serif; }
+h1 { margin: 0; color: var(--maroon); font-size: clamp(3.6rem, 11vw, 6.6rem); font-weight: 600; letter-spacing: -.045em; line-height: .95; }
+h2 { margin: 8px 0 0; color: var(--gold); font-size: clamp(1.6rem, 5vw, 2.35rem); font-weight: 500; }
+
+.gold-line { display: flex; align-items: center; justify-content: center; gap: 12px; width: min(220px, 58%); margin: 18px auto 21px; color: var(--gold); }
+.gold-line::before, .gold-line::after { content: ''; height: 1px; flex: 1; background: linear-gradient(90deg, transparent, var(--gold)); }
+.gold-line::after { transform: rotate(180deg); }
+.gold-line span { font-size: .78rem; }
+
+.message { max-width: 490px; margin: 0 auto; font-size: .92rem; font-weight: 300; line-height: 1.9; }
+.message p { margin: 0 0 13px; }
+.message p:last-child { margin-bottom: 0; }
+.blessing { margin-top: 19px; color: var(--maroon); font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.38rem; font-weight: 600; }
+.blessing span { padding: 0 4px; color: var(--gold); }
+
+.signature { margin-top: 24px; color: #886e56; font-size: .78rem; letter-spacing: .04em; }
+.signature h3 { margin: 2px 0 0; color: var(--maroon); font-size: 2rem; font-weight: 600; }
+.signature h3 span, .student-thanks span { color: #a84a4e; }
+.signature p { margin: 2px 0 0; font-size: .8rem; }
+
+.special-credit { width: min(100%, 510px); margin: 30px auto 0; padding: 20px 20px 15px; border-top: 1px solid rgba(181, 138, 67, .4); border-bottom: 1px solid rgba(181, 138, 67, .4); background: linear-gradient(90deg, transparent, rgba(223, 198, 141, .13), transparent); }
+.credit-line { width: 36px; height: 2px; margin: 0 auto 12px; background: var(--gold); }
+.credit-title { font-size: .61rem; }
+.mam-name { margin: 5px 0 0; color: var(--maroon); font-size: 2.3rem; font-weight: 600; }
+.teacher-title { margin: -2px 0 8px; color: var(--gold); font-size: 1.25rem; font-weight: 500; }
+.credit-message { max-width: 390px; margin: 0 auto; color: #66584d; font-size: .8rem; font-weight: 300; line-height: 1.8; }
+.student-thanks { margin: 10px 0 0; color: var(--maroon); font-size: .73rem; }
+.credit-symbol { margin-top: 7px; font-size: 21px; }
+
+#shareButton { margin-top: 24px; padding: 12px 23px; color: var(--paper); background: var(--maroon); border: 1px solid var(--gold); border-radius: 2px; font: 500 .82rem 'Poppins', sans-serif; letter-spacing: .03em; cursor: pointer; transition: background .2s ease, transform .2s ease, box-shadow .2s ease; }
+#shareButton:hover, #shareButton:focus-visible { background: var(--maroon-deep); box-shadow: 0 6px 18px rgba(72, 21, 34, .18); transform: translateY(-2px); }
+#shareButton:focus-visible { outline: 3px solid var(--gold-light); outline-offset: 3px; }
+
+.footer { margin-top: 22px; font-size: .55rem; letter-spacing: .15em; }
+.footer span { padding: 0 4px; }
+
+@keyframes slow-turn { to { transform: rotate(360deg); } }
+@keyframes glow { from { transform: translateY(0); filter: drop-shadow(0 2px 4px rgba(181, 138, 67, .16)); } to { transform: translateY(-3px); filter: drop-shadow(0 5px 10px rgba(181, 138, 67, .4)); } }
+
+@media (max-width: 480px) {
+    .page { padding: 14px 10px; }
+    .greeting-card { padding: 30px 20px 25px; }
+    .top-label { font-size: .57rem; letter-spacing: .16em; }
+    .message { font-size: .84rem; line-height: 1.8; }
+    .special-credit { padding-inline: 8px; }
+    .footer { font-size: .48rem; letter-spacing: .1em; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
+}
+
+/* Interactive Diya Styling */
+
+.diyas .diya {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 55px;
+    cursor: pointer;
+    padding: 5px;
+    transition: transform 0.4s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.diyas .diya:hover {
+    transform: scale(1.12);
+}
+
+.diyas .diya.lit {
+    animation: diyaGlow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes diyaGlow {
+    from {
+        filter: drop-shadow(0 0 8px #ffb52e);
+        transform: scale(1);
+    }
+
+    to {
+        filter:
+            drop-shadow(0 0 12px #ffb52e)
+            drop-shadow(0 0 25px #ffae00);
+        transform: scale(1.12);
+    }
+}
+
+/* =================================
+   INTERACTIVE DIWALI DIYAS
+================================= */
+
+.diyas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 45px;
+    margin: 45px auto;
+}
+
+.diyas .diya {
+    position: relative;
+    width: 75px;
+    height: 85px;
+    padding: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Traditional Clay Diya Bowl */
+
+.diyas .bowl {
+    position: absolute;
+    bottom: 8px;
+    left: 7px;
+    width: 60px;
+    height: 35px;
+
+    background: linear-gradient(
+        180deg,
+        #ffad70 0%,
+        #e66a36 50%,
+        #78321d 100%
+    );
+
+    border: 3px solid #5b2418;
+    border-radius: 10px 10px 35px 35px;
+
+    box-shadow: 0 5px 8px rgba(80, 40, 15, 0.2);
+}
+
+/* Flame Initially OFF */
+
+.diyas .flame {
+    position: absolute;
+    bottom: 43px;
+    left: 29px;
+
+    width: 17px;
+    height: 28px;
+
+    background: radial-gradient(
+        ellipse at 50% 70%,
+        #ffffff 0%,
+        #ffe66b 30%,
+        #ff9d00 65%,
+        #ff4b00 100%
+    );
+
+    border-radius: 50% 50% 50% 50%;
+
+    transform: scale(0);
+    opacity: 0;
+
+    transition: opacity 0.3s ease;
+}
+
+/* Flame ON Only When Clicked */
+
+.diyas .diya.lit .flame {
+    opacity: 1;
+
+    transform-origin: bottom center;
+
+    box-shadow:
+        0 0 10px #ffae00,
+        0 0 22px #ff8c00,
+        0 0 35px rgba(255, 150, 0, 0.5);
+
+    animation: flameFlicker 0.7s ease-in-out infinite alternate;
+}
+
+/* Natural Flame Movement */
+
+@keyframes flameFlicker {
+    0% {
+        transform: rotate(-5deg) scale(1);
+    }
+
+    50% {
+        transform: rotate(4deg) scale(1.08);
+    }
+
+    100% {
+        transform: rotate(-3deg) scale(1.12);
+    }
+}
+
+/* Hover Effect */
+
+.diyas .diya:hover {
+    transform: translateY(-3px);
+}
+
+/* Mobile Responsive */
+
+@media (max-width: 600px) {
+    .diyas {
+        gap: 25px;
+    }
+
+    .diyas .diya {
+        transform: scale(0.9);
+    }
+}

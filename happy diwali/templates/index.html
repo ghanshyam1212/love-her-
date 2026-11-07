@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f7f0e5">
+
+    <title>Happy Diwali | Ghanshyam</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <canvas id="fireworks" aria-hidden="true"></canvas>
+
+    <main class="page">
+        <article class="greeting-card">
+
+            <div class="top-label">✦ THE FESTIVAL OF LIGHTS ✦</div>
+
+            <div class="rangoli" aria-hidden="true">✺</div>
+
+            <!-- Interactive Diya Section -->
+
+            <div class="diyas" aria-label="Interactive Diya decorations">
+
+                <button class="diya" type="button"
+                    onclick="lightDiya(this)"
+                    aria-label="Light first diya">
+
+                    <span class="flame"></span>
+                    <span class="bowl"></span>
+
+                </button>
+
+                <button class="diya" type="button"
+                    onclick="lightDiya(this)"
+                    aria-label="Light second diya">
+
+                    <span class="flame"></span>
+                    <span class="bowl"></span>
+
+                </button>
+
+                <button class="diya" type="button"
+                    onclick="lightDiya(this)"
+                    aria-label="Light third diya">
+
+                    <span class="flame"></span>
+                    <span class="bowl"></span>
+
+                </button>
+
+            </div>
+
+            <p class="hindi-top" lang="hi">Best wishes to you all</p>
+
+            <h1>Happy Diwali</h1>
+
+            <h2 lang="hi">Happy Diwali</h2>
+
+            <div class="gold-line" aria-hidden="true">
+                <span>✦</span>
+            </div>
+
+            <div class="message">
+
+                <p>
+                    May the divine light of Diwali bring happiness,
+                    prosperity, peace and success into your life.
+                </p>
+
+                <p>
+                    May every diya brighten your home, every prayer
+                    bring blessings, and every moment fill your heart with joy.
+                </p>
+
+                <p>
+                    Wishing you and your family a beautiful and blessed Diwali!
+                </p>
+
+            </div>
+
+            <div class="blessing">
+                ✨ Happiness <span>•</span> Prosperity <span>•</span> Joy ✨
+            </div>
+
+            <div class="signature">
+
+                <div>With Love &amp; Best Wishes</div>
+
+                <h3>
+                    Ghanshyam <span aria-label="love">♥</span>
+                </h3>
+
+                <p lang="hi"></p>
+
+            </div>
+
+            <!-- Special Teacher Appreciation -->
+
+            <section class="special-credit" aria-labelledby="mam-name">
+
+                <div class="credit-line" aria-hidden="true"></div>
+
+                <div class="credit-title">
+                    ✦ WITH DEEP RESPECT &amp; HEARTFELT GRATITUDE ✦
+                </div>
+
+                <h3 class="mam-name" id="mam-name">
+                    Dr. Rashmi Ma'am
+                </h3>
+
+                <h4 class="teacher-title">
+                    A Wonderful Teacher, Mentor &amp; Guide
+                </h4>
+
+                <p class="credit-message">
+                    A teacher's guidance is a light that continues
+                    to shine in every student's journey.
+                </p>
+
+                <p class="student-thanks">
+                    With Respect, From Your Student
+                    <span aria-label="love">♥</span>
+                </p>
+
+                <div class="credit-symbol" aria-hidden="true">🪔</div>
+
+            </section>
+
+            <button id="shareButton" type="button" onclick="shareDiwali()">
+                ✨ Share Diwali Wishes
+            </button>
+
+            <div class="footer">
+                MADE WITH LOVE <span>•</span> SPREAD LIGHT &amp; HAPPINESS
+            </div>
+
+        </article>
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+
+    <!-- Diya Lighting Interaction -->
+
+    <script>
+        function lightDiya(diya) {
+            diya.classList.toggle("lit");
+        }
+    </script>
+
+</body>
+</html>
